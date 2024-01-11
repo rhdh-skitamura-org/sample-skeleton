@@ -10,5 +10,4 @@ spec:
   owner: skitamura7446
   system: sample-system
   type: service
-
-  steps:{}
+  steps: {}
