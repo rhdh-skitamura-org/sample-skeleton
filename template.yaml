@@ -77,8 +77,8 @@ spec:
                   type: string
                   description: Specify the GitHub Organization or User to register the repository
   steps:
-    - id: sourcecode_template
-      name: Generating the Source Code Component
+    - id: app_template
+      name: Generating the Application Source Code Component
       action: fetch:template
       input:
         url: ./app-skeleton
@@ -103,13 +103,10 @@ spec:
         defaultBranch: develop
         protectDefaultBranch: false
 
-    - id: publish-manifest-to-github
+    - id: register-to-github
       if: ${{ parameters.git == "github" }}
-      name: Publish Manifest Repository to GitHub
-      action: publish:github
+      name: Registering the Catalog Info Component to GitHub
+      action: catalog:register
       input:
-        repoUrl: ${{ parameters.git_host_url }}?owner=${{ parameters.git_owner_name }}&repo=${{ parameters.app_name }}-manifest
-        repoVisibility: public
-        sourcePath: ./tenant-manifest
-        defaultBranch: develop
-        protectDefaultBranch: false
+        repoContentsUrl: ${{ steps['publish-app-to-github'].output.repoContentsUrl }}
+        catalogInfoPath: "/catalog-info.yaml"
