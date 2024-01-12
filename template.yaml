@@ -21,7 +21,7 @@ spec:
         app_name:
           title: Repository Name
           type: string
-          default: "health-sample"
+          default: "sample-app"
         description:
           title: Description
           type: string
