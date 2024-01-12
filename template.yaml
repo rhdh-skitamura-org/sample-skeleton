@@ -8,7 +8,8 @@ metadata:
     - recommended
 spec:
   owner: user:default/skitamura7446
-  type: service
+#  type: service
+  type: hogehoge
 
   parameters:
     - title: Provide information about the new component
