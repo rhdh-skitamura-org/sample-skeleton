@@ -7,8 +7,7 @@ metadata:
   tags:
     - recommended
 spec:
-  owner: skitamura7446
-  system: sample-system
+  owner: user:default/skitamura7446
   type: service
 
   parameters:
