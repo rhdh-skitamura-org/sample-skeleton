@@ -62,7 +62,7 @@ spec:
           oneOf:
             - properties:
                 git:
-                  type: string
+                #  type: string
                   enum:
                     - github
                 #  enumNames:
