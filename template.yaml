@@ -55,16 +55,30 @@ spec:
           description: This action will store the application source code on the selected Git server
           enum:
             - github
+            - gitlab
           enumNames:
             - GitHub
+            - GitLab
       dependencies:
         git:
           oneOf:
             - properties:
-                git: github
-                #git:
-                #  enum:
-                #    - github
+                git:
+                  enum:
+                    - github
+                git_host_url:
+                  title: Git Host URL
+                  type: string
+                  default: github.com
+                  description: Specify the GitHub or GitLab host URL(e.g., github.com)
+                git_owner_name:
+                  title: GitHub Organization Name or User Name
+                  type: string
+                  description: Specify the GitHub Organization or User to register the repository
+            - properties:
+                git:
+                  enum:
+                    - gitlab
                 git_host_url:
                   title: Git Host URL
                   type: string
