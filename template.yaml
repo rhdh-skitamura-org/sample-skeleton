@@ -58,7 +58,7 @@ spec:
             - gitlab
           enumNames:
             - GitHub
-            - gitlab
+            - GitLab
       dependencies:
         git:
           oneOf:
@@ -81,7 +81,7 @@ spec:
                 git:
                 #  type: string
                   enum:
-                    - github
+                    - gitlab
                 #  enumNames:
                 #    - GitHub
                 git_host_url:
