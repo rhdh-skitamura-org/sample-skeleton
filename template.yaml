@@ -61,12 +61,12 @@ spec:
         git:
           oneOf:
             - properties:
-                git:
-                  type: string
-                  enum:
-                    - github
-                  enumNames:
-                    - GitHub
+                #git:
+                #  type: string
+                #  enum:
+                #    - github
+                #  enumNames:
+                #    - GitHub
                 git_host_url:
                   title: Git Host URL
                   type: string
