@@ -55,10 +55,8 @@ spec:
           description: This action will store the application source code on the selected Git server
           enum:
             - github
-            - gitlab
           enumNames:
             - GitHub
-            - GitLab
       dependencies:
         git:
           oneOf:
@@ -66,7 +64,6 @@ spec:
                 git:
                   enum:
                     - github
-                    - gitlab
                 git_host_url:
                   title: Git Host URL
                   type: string
@@ -110,3 +107,12 @@ spec:
       input:
         repoContentsUrl: ${{ steps['publish-app-to-github'].output.repoContentsUrl }}
         catalogInfoPath: "/catalog-info.yaml"
+  output:
+    links:
+      - title: Open the Source Code Repository
+        if: ${{ parameters.git == "github" }}
+        url: ${{ steps.publish-app-to-github.output.remoteUrl }}
+      - title: Open the Catalog Info Component
+        if: ${{ parameters.git == "github" }}
+        icon: catalog
+        entityRef: ${{ steps.register-to-github.output.entityRef }}
